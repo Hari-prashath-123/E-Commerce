@@ -1,0 +1,166 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    padding: 1rem 0;
+    gap: 2rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+nav a:hover {
+    background: #444;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+.product-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 1rem;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+.product-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+.product-card img {
+    max-width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.product-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+.product-card .btn {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+.product-card .btn:hover {
+    background: #0056b3;
+}
+
+.product-detail img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.btn, button[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.btn:hover, button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 0.95rem;
+}
+
+/* Cart Page */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-bottom: 1.5rem;
+}
+table th, table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+table th {
+    background: #f0f0f0;
+}
+
+/* Flash Messages */
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.flash {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.flash.success, .flash-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.flash.danger, .flash-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.flash.info, .flash-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}

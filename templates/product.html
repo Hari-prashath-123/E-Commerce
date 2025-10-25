@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="product-detail">
+    <h2>{{ product.name }}</h2>
+    <img src="{{ product.image_url or url_for('static', filename='img/default.png') }}" alt="{{ product.name }}">
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ '%.2f'|format(product.price) }}</p>
+    <form method="POST" action="{{ url_for('views.add_to_cart', product_id=product.id) }}">
+        {{ form.hidden_tag() }}
+        <label for="quantity">Quantity:</label>
+        {{ form.quantity() }}
+        {{ form.submit() }}
+    </form>
+</div>
+{% endblock %}

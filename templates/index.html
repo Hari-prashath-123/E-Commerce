@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <a href="{{ url_for('views.product_detail', product_id=product.id) }}">
+            <img src="{{ product.image_url or url_for('static', filename='img/default.png') }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+        </a>
+        <p>${{ '%.2f'|format(product.price) }}</p>
+        <a href="{{ url_for('views.product_detail', product_id=product.id) }}" class="btn">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
