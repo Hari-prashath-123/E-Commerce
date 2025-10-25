@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_required, current_user
-from . import db
-from .models import Product, CartItem, Order, OrderItem
-from .forms import AddToCartForm
+from __init__ import db
+from models import Product, CartItem, Order, OrderItem
+from forms import AddToCartForm
 
 views = Blueprint('views', __name__)
 

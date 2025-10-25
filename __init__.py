@@ -16,12 +16,12 @@ def create_app():
     db.init_app(app)
     login_manager.init_app(app)
 
-    from .auth import auth as auth_blueprint
-    from .views import views as views_blueprint
+    from auth import auth as auth_blueprint
+    from views import views as views_blueprint
     app.register_blueprint(auth_blueprint)
     app.register_blueprint(views_blueprint)
 
-    from .models import User
+    from models import User
 
     @login_manager.user_loader
     def load_user(user_id):
